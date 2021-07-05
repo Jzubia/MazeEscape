@@ -1,6 +1,5 @@
 // images.h
-// contains image buffers for simple space invaders
-// Jonathan Valvano, January 13, 2021, redrawn for SSD1306
+// contains image buffers for Maze Escape Game
 // Capture image dimensions from BMP files
 
 #ifndef __images_h
