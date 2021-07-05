@@ -1,9 +1,7 @@
 // Sound.cpp
 
-// Sound assets based off the original Space Invaders 
 // These arrays create classic sounds!
-// Jonathan Valvano
-// 1/16/2021
+// 5/16/2021
 #include <stdint.h>
 #include "Sound.h"
 #include "DAC.h"
