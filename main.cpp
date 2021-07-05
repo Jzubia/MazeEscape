@@ -1,12 +1,10 @@
 // main.cpp
 // Runs on TM4C123
-// Jonathan Valvano and Daniel Valvano
+// Jason Zubia and Anthony Liu
 // This is a starter project for the EE319K Lab 10 in C++
 
-// Last Modified: 1/16/2021 
-// http://www.spaceinvaders.de/
-// sounds at http://www.classicgaming.cc/classics/spaceinvaders/sounds.php
-// http://www.classicgaming.cc/classics/spaceinvaders/playguide.php
+// Last Modified: 5/16/2021 
+
 /* 
  Copyright 2021 by Jonathan W. Valvano, valvano@mail.utexas.edu
     You may use, edit, run or distribute this file
@@ -393,7 +391,7 @@ extern "C" void EnableInterrupts(void);
 extern "C" void SysTick_Handler(void);
 void Delay100ms(uint32_t count); // time delay in 0.1 seconds
 
-
+/* Served as example starter code
 int main1(void){uint32_t time=0;
   DisableInterrupts();
   // pick one of the following three lines, all three set to 80 MHz
@@ -449,7 +447,8 @@ int main1(void){uint32_t time=0;
   }
 	
 }
-
+*/
+// Maze movement	
 void Move(){
 	MazePieces[index].ypos1 += MazePieces[index].vy; // move maze down
 	if(MazePieces[index].ypos1 >= 15){
@@ -464,6 +463,7 @@ void Move(){
 	update = true; 
 }
 
+// Maze movement
 void Move1(){
 	MazeSegments[index].ypos1 += MazeSegments[index].vy; // move maze down
 	if(MazeSegments[index].ypos1 >= 15){
@@ -514,6 +514,7 @@ void Move1(){
 	update = true; 
 }
 
+// Player Movement
 void move(void){
 	uint32_t ADCdata = ADC_In();
 	player.x = (120*ADCdata)/4000;
@@ -579,6 +580,7 @@ void move(void){
 	}
 }
 
+// Enemy Collision
 void collisions(void){
 	int i;
 	uint32_t x1, y1, x2, y2, x3, y3;
@@ -666,7 +668,7 @@ void playercollision(void){
 //	SSD1306_DrawString(x,y,buf,color);
 //}
 
-// Intro screen and game play
+// Intro screen and game play (MAIN GAME ENGINE)
 int glob = 800000;
 int lang = 2;
 bool pause;
@@ -814,7 +816,8 @@ int main(){
 }
 
 
-// Has gameplay
+// Has gameplay only, no added features
+/*
 int main2(){
 	DisableInterrupts();
   // pick one of the following three lines, all three set to 80 MHz
@@ -842,6 +845,7 @@ int main2(){
 		PF2 ^= 0x04;
 	}
 }
+*/
 
 void fire(int32_t vx1, int32_t vy1){int i;
 	i = 0;
